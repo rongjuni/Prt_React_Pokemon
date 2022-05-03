@@ -1,0 +1,3 @@
+1. On each Pokemon's details page, create a link to the details page of the other pokemon (if any) being referenced by that Pokemon object (i.e. “next_evolution”)
+
+2. adding filters (Type and Weaknesses)
