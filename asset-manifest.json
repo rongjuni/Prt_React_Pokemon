@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/rongjuni/Prt_React_Pokemon.git/static/css/main.0b4e74b4.css",
-    "main.js": "/rongjuni/Prt_React_Pokemon.git/static/js/main.cdbbbd7f.js",
+    "main.js": "/rongjuni/Prt_React_Pokemon.git/static/js/main.bf22320c.js",
     "static/js/787.27ea3247.chunk.js": "/rongjuni/Prt_React_Pokemon.git/static/js/787.27ea3247.chunk.js",
     "index.html": "/rongjuni/Prt_React_Pokemon.git/index.html",
     "main.0b4e74b4.css.map": "/rongjuni/Prt_React_Pokemon.git/static/css/main.0b4e74b4.css.map",
-    "main.cdbbbd7f.js.map": "/rongjuni/Prt_React_Pokemon.git/static/js/main.cdbbbd7f.js.map",
+    "main.bf22320c.js.map": "/rongjuni/Prt_React_Pokemon.git/static/js/main.bf22320c.js.map",
     "787.27ea3247.chunk.js.map": "/rongjuni/Prt_React_Pokemon.git/static/js/787.27ea3247.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0b4e74b4.css",
-    "static/js/main.cdbbbd7f.js"
+    "static/js/main.bf22320c.js"
   ]
 }
