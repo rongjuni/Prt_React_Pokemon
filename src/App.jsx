@@ -20,8 +20,6 @@ const App = () => {
       </Routes>
     </Router>
   );
-};
+}; // endline
 
 export default App;
-
-//endline
