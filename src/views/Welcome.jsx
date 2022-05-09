@@ -30,9 +30,9 @@ const Welcome = () => {
       <Card.Footer
         className="text-muted"
         // Link to combined portfolio will be added once completed
-        onClick={() => {
-          alert("Add: Will be directed to combined portfolio");
-        }}
+        onClick={() =>
+          window.open("https://mattseoblog.herokuapp.com/", "_blank")
+        }
         style={{ cursor: "pointer" }}
       >
         Matt Seo
