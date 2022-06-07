@@ -12,11 +12,11 @@ const Welcome = () => {
     <Card className="text-center">
       <Card.Header>Welcome To PokeWorld</Card.Header>
       <Card.Body>
-        <Card.Title>Pokemons Are Still In My Hearts</Card.Title>
+        <Card.Title>Pokemons Are Still In My Heart</Card.Title>
         <Card.Text>
-          But there are so many pokemons (even more in newer version) that we
-          cannot remember all their characters. This Pokemon dictionary will
-          help you recall.
+          But I don't remember all pokemons.. There are so many pokemons (even
+          more in newer version). This Pokemon dictionary will help you recall
+          your beautiful memory.
         </Card.Text>
         <Button
           variant="primary"

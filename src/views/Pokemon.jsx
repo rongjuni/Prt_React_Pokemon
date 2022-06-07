@@ -57,28 +57,6 @@ const Home = () => {
         />
 
         {/* will be added attack type and weaknesses*/}
-
-        {/* <Dropdown>
-          <Dropdown.Toggle variant="success" id="dropdown-basic">
-            Attack Type
-          </Dropdown.Toggle>
-          <Dropdown.Menu>
-            <Dropdown.Item href="#/action-1">Grass</Dropdown.Item>
-            <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-            <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
-        <Dropdown>
-          <Dropdown.Toggle variant="success" id="dropdown-basic">
-            Weaknesses
-          </Dropdown.Toggle>
-
-          <Dropdown.Menu>
-            <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-            <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-            <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown> */}
       </InputGroup>
 
       <div className="row">
