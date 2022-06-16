@@ -12,11 +12,14 @@ const Welcome = () => {
     <Card className="text-center">
       <Card.Header>Welcome To PokeWorld</Card.Header>
       <Card.Body>
-        <Card.Title>Pokemons Are Still In My Heart</Card.Title>
+        <Card.Title>Developed for My Daughter's Tantrum Handling</Card.Title>
         <Card.Text>
-          But I don't remember all pokemons.. There are so many pokemons (even
-          more in newer version). This Pokemon dictionary will help you recall
-          your beautiful memory.
+          Everytime my 3 years old daughter throws a tantrum, I show her this
+          list of pokemons and ask her whom she wants to talk to. Then I pretent
+          to call and talk to the pokemon and tell her that they will visit our
+          home if she is doing well. It has costed little extra money as I had
+          to buy pokemon plushies who promised to visit, but it works greatly to
+          calm her down. 😁
         </Card.Text>
         <Button
           variant="primary"
