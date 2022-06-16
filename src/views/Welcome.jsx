@@ -19,7 +19,7 @@ const Welcome = () => {
           to call and talk to the pokemon and tell her that they will visit our
           home if she is doing well. It has costed little extra money as I had
           to buy pokemon plushies who promised to visit, but it works greatly to
-          calm her down. :)
+          calm her down!
         </Card.Text>
         <Button
           variant="primary"
