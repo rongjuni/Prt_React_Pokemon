@@ -1,0 +1,10 @@
+.pointer{
+    cursor: pointer;
+    box-shadow: 2px 3px green;
+}
+
+
+.pointer:active {
+    
+    box-shadow: 2px 3px lightgreen;
+}

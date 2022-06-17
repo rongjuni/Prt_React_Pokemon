@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { InputGroup, FormControl, Dropdown } from "react-bootstrap";
+
 const Home = () => {
   const [pokemonList, setPokemonList] = useState([]);
 
@@ -41,8 +42,8 @@ const Home = () => {
         return false;
       }
     });
+    console.log("searched updated list ", updatedList);
     setFilteredList(updatedList);
-    console.log(updatedList);
   };
 
   return (
@@ -62,8 +63,14 @@ const Home = () => {
       <div className="row">
         {filterList.length < 1
           ? console.log("empty")
-          : filterList.map((val) => {
-              return <Express val={val} />;
+          : filterList.map((filterListValues) => {
+              // console.log(pokemonList);
+              return (
+                <Express
+                  filterListValues={filterListValues}
+                  pokemonList={pokemonList}
+                />
+              );
             })}
       </div>
     </main>
@@ -71,28 +78,34 @@ const Home = () => {
 }; //Home function ending line//
 
 // Func Express is to filterList which saves searched input
-function Express({ val }) {
+const Express = ({ filterListValues, pokemonList }) => {
   const navigate = useNavigate();
-
   return (
     <div className="card col-md-4">
       <div className="card-body">
         <span
-          to={`/pokemon/${val.num}${val.name}`}
+          to={`/pokemon/${filterListValues.num}${filterListValues.name}`}
           onClick={() => {
-            navigate(`/pokemon/${val.num}${val.name}`, {
-              state: { selectedItem: val },
-            });
+            console.log("filterListValues ", filterListValues);
+            navigate(
+              `/pokemon/${filterListValues.num}-${filterListValues.name}`,
+              {
+                state: {
+                  selectedItem: filterListValues,
+                  pokemonListPass: pokemonList,
+                },
+              }
+            );
           }}
           style={{ cursor: "pointer" }}
         >
-          <h3>{val.num}</h3>
-          <h1>{val.name}</h1>
-          <img width="200" src={val.img} alt="pokemon pictures" />
+          <h3>{filterListValues.num}</h3>
+          <h1>{filterListValues.name}</h1>
+          <img width="200" src={filterListValues.img} alt="pokemon pictures" />
         </span>
       </div>
     </div>
   );
-} // func Express ending line
+}; // func Express ending line
 
 export default Home;

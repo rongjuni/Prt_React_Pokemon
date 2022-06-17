@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { Card, Button } from "react-bootstrap";
+import "./Detail.css";
 
 const Detail = () => {
   const navigate = useNavigate();
@@ -12,14 +13,32 @@ const Detail = () => {
 
   // Storing clicked/passed API object from Pokemon.jsx
   const [selectedItem, setSelectedItem] = useState(location.state.selectedItem);
+  const [pokemonListPass, setPokemonListPass] = useState(
+    location.state.pokemonListPass
+  );
+
+  console.log("selected Item ", selectedItem);
 
   return (
     <div>
-      <Card style={{ width: "20rem" }}>
+      <DetailCard
+        selectedItem={selectedItem}
+        pokemonListPass={pokemonListPass}
+        setSelectedItem={setSelectedItem}
+      ></DetailCard>
+    </div>
+  );
+}; //main ending line
+
+const DetailCard = ({ selectedItem, pokemonListPass, setSelectedItem }) => {
+  const navigate = useNavigate();
+  return (
+    <div>
+      <Card style={{ width: "20rem", margin: "auto", marginTop: "1rem" }}>
         <Card.Img
           variant="top"
           src={selectedItem.img}
-          style={{ width: "15rem" }}
+          style={{ width: "15rem", margin: "auto" }}
         />
 
         <Card.Body>
@@ -33,13 +52,25 @@ const Detail = () => {
             </p>
             <h4> Evolution </h4>
             {selectedItem.prev_evolution
-              ? selectedItem.prev_evolution.map(function (val, ind) {
-                  return <Evolution val={val} />;
+              ? selectedItem.prev_evolution.map((val, ind) => {
+                  return (
+                    <Evolution
+                      val={val}
+                      pokemonListPass={pokemonListPass}
+                      setSelectedItem={setSelectedItem}
+                    />
+                  );
                 })
               : null}
             {selectedItem.next_evolution
-              ? selectedItem.next_evolution.map(function (val, ind) {
-                  return <Evolution val={val} />;
+              ? selectedItem.next_evolution.map((val, ind) => {
+                  return (
+                    <Evolution
+                      val={val}
+                      pokemonListPass={pokemonListPass}
+                      setSelectedItem={setSelectedItem}
+                    />
+                  );
                 })
               : null}
             <h6>
@@ -58,6 +89,7 @@ const Detail = () => {
         </Card.Body>
 
         <Button
+          variant="success"
           onClick={() => {
             navigate("/pokemon");
           }}
@@ -67,20 +99,35 @@ const Detail = () => {
       </Card>
     </div>
   );
-}; //main ending line
+};
 
 // func Evolution to show evlution object in API
-const Evolution = (props) => {
+const Evolution = ({ val, pokemonListPass, setSelectedItem }) => {
   const navigate = useNavigate();
-  const passedValue = props.val;
+  console.log("value ", val);
+
   return (
     <div
+      className="pointer"
       onClick={() => {
-        navigate(`/pokemon/`);
+        const evol = pokemonListPass.filter((pokemon) => {
+          if (pokemon.num.includes(val.num)) {
+            return true;
+          } else {
+            return false;
+          }
+        });
+        console.log("evolution ", evol);
+        setSelectedItem(evol[0]);
+        navigate(`/pokemon/${val.num}-${val.name}`, {
+          state: {
+            selectedItem: val,
+          },
+        });
       }}
     >
       <p>
-        {props.val.num} - {props.val.name}
+        {val.num} - {val.name}
       </p>
     </div>
   );
