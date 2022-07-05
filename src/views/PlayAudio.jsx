@@ -3,7 +3,7 @@ import { Button } from "react-bootstrap";
 import "./PlayAudio.css";
 
 const PlayAudio = ({ selectedItem }) => {
-  let randomGenerate = Math.floor(Math.random() * 7 + 1).toString();
+  let randomGenerate = Math.floor(Math.random() * 15 + 1).toString();
   let randomThreeDigit = randomGenerate.padStart(3, "0");
   let [randomNumber, setRandomNumber] = useState(randomThreeDigit);
 
@@ -23,7 +23,7 @@ const PlayAudio = ({ selectedItem }) => {
           console.log(audio);
 
           // console.log("ran number before refresh ", randomNumber);
-          let randomGenerate = Math.floor(Math.random() * 7 + 1).toString();
+          let randomGenerate = Math.floor(Math.random() * 15 + 1).toString();
           let randomThreeDigit = randomGenerate.padStart(3, "0");
           setRandomNumber(randomThreeDigit);
           // randomGenerate = Math.floor(Math.random() * 4).toString();
