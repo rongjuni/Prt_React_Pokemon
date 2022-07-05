@@ -32,15 +32,6 @@ const PlayAudio = ({ selectedItem }) => {
       >
         CALL
       </Button>
-
-      <Button
-        onClick={() => {
-          audio.pause();
-          audio.currentTime = 0;
-        }}
-      >
-        Pause
-      </Button>
     </div>
   );
 };
