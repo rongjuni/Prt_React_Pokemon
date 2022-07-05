@@ -4,10 +4,10 @@ import React, { useState } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { Card, Button } from "react-bootstrap";
 import "./Detail.css";
+import PlayAudio from "./PlayAudio";
 
 const Detail = () => {
   const navigate = useNavigate();
-
   // useLocation to receive the value passed from Pokemon. Clicked card API
   const location = useLocation();
 
@@ -16,8 +16,6 @@ const Detail = () => {
   const [pokemonListPass, setPokemonListPass] = useState(
     location.state.pokemonListPass
   );
-
-  console.log("selected Item ", selectedItem);
 
   return (
     <div>
@@ -32,6 +30,7 @@ const Detail = () => {
 
 const DetailCard = ({ selectedItem, pokemonListPass, setSelectedItem }) => {
   const navigate = useNavigate();
+
   return (
     <div>
       <Card style={{ width: "20rem", margin: "auto", marginTop: "1rem" }}>
@@ -40,6 +39,8 @@ const DetailCard = ({ selectedItem, pokemonListPass, setSelectedItem }) => {
           src={selectedItem.img}
           style={{ width: "15rem", margin: "auto" }}
         />
+
+        <PlayAudio selectedItem={selectedItem} />
 
         <Card.Body>
           <Card.Title>
@@ -92,6 +93,7 @@ const DetailCard = ({ selectedItem, pokemonListPass, setSelectedItem }) => {
           variant="success"
           onClick={() => {
             navigate("/pokemon");
+            // navigate(-1);
           }}
         >
           Back
