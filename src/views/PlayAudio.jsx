@@ -14,8 +14,6 @@ const PlayAudio = ({ selectedItem }) => {
   // const audio = new Audio("/voice/sound" + "200 copy" + ".m4a");
   const audio = new Audio("/voice/sound" + randomNumber + ".m4a");
 
-  console.log(audio);
-
   return (
     <div className="container-call-voice">
       <Button
@@ -23,7 +21,6 @@ const PlayAudio = ({ selectedItem }) => {
         className="call-voice"
         onClick={() => {
           audio.play();
-          console.log(audio);
 
           // console.log("ran number before refresh ", randomNumber);
           let randomGenerate = Math.floor(
@@ -31,6 +28,7 @@ const PlayAudio = ({ selectedItem }) => {
           ).toString();
           let randomThreeDigit = randomGenerate.padStart(3, "0");
           setRandomNumber(randomThreeDigit);
+          console.log(randomThreeDigit);
           // randomGenerate = Math.floor(Math.random() * 4).toString();
           // console.log("ran number AFTER refresh ", randomNumber);
         }}
