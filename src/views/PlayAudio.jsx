@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "react-bootstrap";
 import "./PlayAudio.css";
 
 const PlayAudio = ({ selectedItem }) => {
-  let totalAudioNumber = 18;
+  let totalAudioNumber = 1;
   let randomGenerate = Math.floor(
     Math.random() * totalAudioNumber + 1
   ).toString();
@@ -12,7 +12,14 @@ const PlayAudio = ({ selectedItem }) => {
 
   console.log(randomThreeDigit);
   // const audio = new Audio("/voice/sound" + "200 copy" + ".m4a");
+
   const audio = new Audio("/voice/sound" + randomNumber + ".m4a");
+
+  useEffect(() => {
+    return () => {
+      audio.pause();
+    };
+  }, []);
 
   return (
     <div className="container-call-voice">
@@ -29,8 +36,6 @@ const PlayAudio = ({ selectedItem }) => {
           let randomThreeDigit = randomGenerate.padStart(3, "0");
           setRandomNumber(randomThreeDigit);
           console.log(randomThreeDigit);
-          // randomGenerate = Math.floor(Math.random() * 4).toString();
-          // console.log("ran number AFTER refresh ", randomNumber);
         }}
       >
         CALL
