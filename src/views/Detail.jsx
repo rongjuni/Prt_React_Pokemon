@@ -106,7 +106,6 @@ const DetailCard = ({ selectedItem, pokemonListPass, setSelectedItem }) => {
 // func Evolution to show evlution object in API
 const Evolution = ({ val, pokemonListPass, setSelectedItem }) => {
   const navigate = useNavigate();
-  console.log("value ", val);
 
   return (
     <div
@@ -119,7 +118,6 @@ const Evolution = ({ val, pokemonListPass, setSelectedItem }) => {
             return false;
           }
         });
-        console.log("evolution ", evol);
         setSelectedItem(evol[0]);
         navigate(`/pokemon/${val.num}-${val.name}`, {
           state: {

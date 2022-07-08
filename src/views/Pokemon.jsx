@@ -42,7 +42,6 @@ const Home = () => {
         return false;
       }
     });
-    console.log("searched updated list ", updatedList);
     setFilteredList(updatedList);
   };
 
@@ -64,7 +63,6 @@ const Home = () => {
         {filterList.length < 1
           ? console.log("empty")
           : filterList.map((filterListValues) => {
-              // console.log(pokemonList);
               return (
                 <Express
                   filterListValues={filterListValues}
@@ -86,7 +84,6 @@ const Express = ({ filterListValues, pokemonList }) => {
         <span
           to={`/pokemon/${filterListValues.num}${filterListValues.name}`}
           onClick={() => {
-            console.log("filterListValues ", filterListValues);
             navigate(
               `/pokemon/${filterListValues.num}-${filterListValues.name}`,
               {
